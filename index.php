@@ -21,6 +21,10 @@ class Car
   {
     return $this->cost;
   }
+  function getMiles()
+  {
+    return $this->distance;
+  }
 
 }
 
@@ -33,9 +37,18 @@ $mercedes = new Car("2025 Mercedes Benz CLS550", 3990000, 37979, "Fantastic", "M
 $cars = array($porsche, $ford, $lexus, $mercedes);
 
 $cars_matching_search = array();
-foreach ($cars as $car) {
-    if ($car->getPrice() < $_GET["price"]) {
-        array_push($cars_matching_search, $car);
+
+    foreach ($cars as $car) {
+    if ($car->getMiles() < $_GET["distance"] && $_GET["price"] == ""){
+          array_push($cars_matching_search, $car);
+      } elseif ($car->getPrice() < $_GET["price"] && $_GET["distance"] == "") {
+          array_push($cars_matching_search, $car);
+      } elseif ($car->getPrice() < $_GET["price"] && $car->getMiles() < $_GET["distance"]) {
+          array_push($cars_matching_search, $car);
+        }
+      }
+      if (empty($cars_matching_search)) {
+          echo "Your search has provided no results!";
       }
     // } else if ($car->getMake_model() < $_GET["make_model"]) {
     //     array_push($cars_matching_search, $car);
@@ -44,7 +57,7 @@ foreach ($cars as $car) {
     // } else if ($car->getConodition() < $_GET["condition"]) {
     //     array_push($cars_matching_search, $car);
     // }
-}
+
 ?>
 
 
