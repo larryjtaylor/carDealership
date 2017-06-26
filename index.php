@@ -30,9 +30,9 @@ class Car
 
 
 $porsche = new Car("2011 Porsche 911", 114991, 7864, "Lightly used", "porsche.jpg");
-$ford = new Car("2008 Ford F450", 80000, 14241, "Brilliant", "ford.jpeg");
-$lexus = new Car("2016 Lexus RX 350", 44700, 20000, "Shiney", "Lexus.png");
-$mercedes = new Car("2025 Mercedes Benz CLS550", 3990000, 37979, "Fantastic", "Mercedes.png");
+$ford = new Car("2008 Ford F450", 80000, 14241, "Brilliant", "ford.jpg");
+$lexus = new Car("2016 Lexus RX 350", 44700, 20000, "Shiney", "lexus.jpg");
+$mercedes = new Car("2025 Mercedes Benz CLS550", 3990000, 37979, "Fantastic", "mercedes.jpg");
 
 $cars = array($porsche, $ford, $lexus, $mercedes);
 
