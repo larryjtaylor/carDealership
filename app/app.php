@@ -20,12 +20,12 @@
      });
 
     $app->post("/cars", function() use($app){
-        $porsche = new Car("2011 Porsche 911", 114991, 27864, "used", "/../img/porsche.jpg");
-        $ford = new Car("2008 Ford F450", 80000, 24241, "used", "/../img/ford.jpg");
-        $lexus = new Car("2016 Lexus RX 350", 44700, 20000, "new", "/../img/lexus.jpg");
-        $mercedes = new Car("2025 Mercedes Benz CLS550", 3990000, 37979, "new", "/../img/mercedes.jpg");
+        // $porsche = new Car("2011 Porsche 911", 114991, 27864, "used", "/../img/porsche.jpg");
+        // $ford = new Car("2008 Ford F450", 80000, 24241, "used", "/../img/ford.jpg");
+        // $lexus = new Car("2016 Lexus RX 350", 44700, 20000, "new", "/../img/lexus.jpg");
+        // $mercedes = new Car("2025 Mercedes Benz CLS550", 3990000, 37979, "new", "/../img/mercedes.jpg");
 
-        $cars = array($porsche, $ford, $lexus, $mercedes);
+        $cars = Car::getAll();
 
         $cars_matching_search = array();
 
@@ -41,6 +41,8 @@
     $app->post("/sale", function() use ($app) {
         $cars = new Car($_POST['type'], $_POST['price'], $_POST['mileage'], $_POST['condition'], $_POST['image']);
         $cars->save();
+
+
         return $app['twig']->render('sell_cars.html.twig', array('newcar' => $cars));
     });
 
