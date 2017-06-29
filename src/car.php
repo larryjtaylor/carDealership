@@ -1,11 +1,11 @@
 <?php
 class Car
 {
-  public $type;
+  private $type;
   private $price;
   private $mileage;
-  public $condition;
-  public $image;
+  private $condition;
+  private $image;
 
 
   function __construct($type, $price, $mileage, $condition, $image){

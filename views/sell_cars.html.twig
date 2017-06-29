@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Sell Car</title>
+    </head>
+    <body>
+        <h1>Here's the car for sale:</h1>
+        <p>{{ newcar.getType }}</p>
+        <ul>
+            <li>{{ newcar.getPrice }}</li><br>
+            <li>{{ newcar.getMileage }}</li><br>
+            <li>{{ newcar.getCondition }}</li><br>
+            <li><img src= "{{ newcar.getImage }}" ></li><br>
+        </ul>
+        <p><a href="/">View your cars for sale</a></p>
+    </body>
+</html>

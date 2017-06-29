@@ -37,5 +37,16 @@
          return $app['twig']->render('view_cars.html.twig', array('newcar' => $cars_matching_search));
 
     });
+
+    $app->post("/sale", function() use ($app) {
+        $cars = new Car($_POST['type'], $_POST['price'], $_POST['mileage'], $_POST['condition'], $_POST['image']);
+        $cars->save();
+        return $app['twig']->render('sell_cars.html.twig', array('newcar' => $cars));
+    });
+
+    $app->post("/clear", function() use ($app) {
+        Car::deleteAll();
+        return $app['twig']->render('clear_cars.html.twig');
+    });
     return $app
 ?>

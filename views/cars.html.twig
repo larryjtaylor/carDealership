@@ -3,7 +3,7 @@
     <title>Your Car Dealership's Homepage</title>
 </head>
 <body>
-    <h1>Your Car Dealership</h1>
+    <h1>Find a car for sale:</h1>
     <form action='/cars' method='post'>
         <div class='form-group'>
             <label for='price'>Preferred Price</label>
@@ -26,6 +26,35 @@
 
         {% endfor %}
     {% endif %}
+
+    <h1>Or sell your own car:</h1>
+    <form action='/sale' method='post'>
+        <div class='form-group'>
+            <label for='type'>Year, make and model</label>
+            <input id='type' name='type' class='form-control' type='text'>
+        </div>
+        <div class='form-group'>
+            <label for='price'>Sale Price</label>
+            <input id='price' name='price' class='form-control' type='number'>
+        </div>
+        <div class='form-group'>
+            <label for='mileage'>Mileage</label>
+            <input id='mileage' name='mileage' class='form-control' type='number'>
+        </div>
+        <div class='form-group'>
+            <label for='condition'>Condition (good, fair, etc...)</label>
+            <input id='condition' name='condition' class='form-control' type='text'>
+        </div>
+        <div class='form-group'>
+            <label for='image'>Enter image URL here.</label>
+            <input id='image' name='image' class='form-control' type='text'>
+        </div>
+
+        <button type='submit' class='btn'>Go!</button>
+    </form>
+    <form action='/clear' method='post'>
+        <button type='submit'>Clear</button>
+    </form>
 
   </body>
 </html>
