@@ -1,30 +1,83 @@
 <?php
 class Car
 {
-  public $make_type;
-  private $cost;
-  public $distance;
-  public $status;
-  public $picture;
+  public $type;
+  private $price;
+  private $mileage;
+  public $condition;
+  public $image;
 
-  function __construct($make_model, $price, $miles = 7864, $condition, $image_location){
-    $this->make_type = $make_model;
-    $this->cost = $price;
-    $this->distance = $miles;
-    $this->status = $condition;
-    $this->picture = $image_location;
+
+  function __construct($type, $price, $mileage, $condition, $image){
+    $this->type = $type;
+    $this->price = $price;
+    $this->mileage = $mileage;
+    $this->condition = $condition;
+    $this->image = $image;
   }
-  function setPrice($new_price) {
-    $this->cost = $new_price;
+
+  function setImage($image)
+  {
+    $this->image = (string) $image;
   }
+
+  function getImage()
+  {
+    return $this->image;
+  }
+
+  function setType($image)
+  {
+    $this->type = (string) $type;
+  }
+
+  function getType()
+  {
+    return $this->type;
+  }
+
+  function setPrice($price)
+  {
+    $this->price = (string) $price;
+  }
+
   function getPrice()
   {
-    return $this->cost;
+    return $this->price;
   }
-  function getMiles()
+
+  function setMileage($mileage)
   {
-    return $this->distance;
+      $this->mileage = (string) $mileage;
   }
+
+  function getMileage()
+  {
+    return $this->mileage;
+  }
+
+  function setCondition($condition)
+  {
+      $this->condition = (string) $condition;
+  }
+
+  function getCondition()
+  {
+    return $this->condition;
+  }
+
+   function save()
+   {
+       array_push($_SESSION['list_of_cars'], $this);
+   }
+   static function getAll()
+   {
+       return $_SESSION['list_of_cars'];
+   }
+   static function deleteAll()
+   {
+       $_SESSION['list_of_cars'] = array();
+   }
 
 }
 
