@@ -30,10 +30,7 @@
         $cars_matching_search = array();
 
             foreach ($cars as $car) {
-                if ($car->getPrice() < $_POST['price']) {
-                    array_push($cars_matching_search, $car);
-                }
-                if ($car->getMileage() < $_POST['mileage']) {
+                if ($car->getPrice() < $_POST['price'] && $car->getMileage() < $_POST['mileage']) {
                     array_push($cars_matching_search, $car);
                 }
             }
