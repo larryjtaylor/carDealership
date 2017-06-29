@@ -15,5 +15,17 @@
         </div>
         <button type='submit' class='btn'>Go!</button>
     </form>
+
+    {% if cars is not empty %}
+        {% for car in cars %}
+            <h1>Car type: {{ car.getType }} </h1>
+            <h3>Price: {{ car.getPrice }} </h3>
+            <h3>Mileage: {{ car.getMileage }} </h3>
+            <h3>Condition: {{ car.getCondition }} </h3>
+            <img src="{{ car.getImage }}">
+
+        {% endfor %}
+    {% endif %}
+
   </body>
 </html>

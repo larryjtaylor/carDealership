@@ -34,7 +34,6 @@
                     array_push($cars_matching_search, $car);
                 }
             }
-
          return $app['twig']->render('view_cars.html.twig', array('newcar' => $cars_matching_search));
 
     });

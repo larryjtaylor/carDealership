@@ -11,10 +11,11 @@
             <h3>Mileage: {{ car.getMileage }} </h3>
             <h3>Condition: {{ car.getCondition }} </h3>
             <img src="{{ car.getImage }}">
-
         {% endfor %}
+        {% else %}
+            <h2>No vehicles matched your search.</h2>
     {% endif %}
 
 
-<p><a href="/">View your cars</a></p></body>
+<p><a href="/">New Search</a></p></body>
 </html>
